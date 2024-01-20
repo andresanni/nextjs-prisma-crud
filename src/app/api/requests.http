@@ -1,0 +1,25 @@
+GET http://localhost:3000/api/tasks
+###
+
+POST http://localhost:3000/api/tasks
+content-Type: application/json
+
+{
+    "title": "Comerme un sandwich",
+    "description": "De jamon y queso con mucha mayonesa"
+}
+###
+
+GET http://localhost:3000/api/tasks/1 
+###
+
+DELETE http://localhost:3000/api/tasks/3
+###
+
+PUT http://localhost:3000/api/tasks/1
+Content-Type: application/json
+
+{
+    "title": "Hacer web",
+    "description": "Crear pagina web utilizando nextjs"
+}
