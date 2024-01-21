@@ -9,7 +9,7 @@ const NewPage = ({ params }) => {
 
   useEffect(() => {
     if(params.taskId){
-      fetch(`/api/tasks/${params.taskId}`)
+      fetch(`http://localhost:3000/api/tasks/${params.taskId}`)
       .then((response) => response.json())
       .then((data) => {
         setTitle(data.title);
@@ -22,7 +22,7 @@ const NewPage = ({ params }) => {
     event.preventDefault();
 
     if(params.taskId){
-      const response = await fetch(`/api/tasks/${params.taskId}`, {
+      const response = await fetch(`http://localhost:3000/api/tasks/${params.taskId}`, {
         method: "PUT",
         body: JSON.stringify({ title, description }),
         headers: {
@@ -33,7 +33,7 @@ const NewPage = ({ params }) => {
       const data = await response.json();
     }
     else{
-      const response = await fetch("/api/tasks", {
+      const response = await fetch("http://localhost:3000/api/tasks", {
         method: "POST",
         body: JSON.stringify({ title, description }),
         headers: {
